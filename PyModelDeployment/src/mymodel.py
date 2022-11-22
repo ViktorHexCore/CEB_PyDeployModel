@@ -7,7 +7,9 @@ column_names = ["age", "sex", "cp", "trestbps", "chol", "fbs",
                 "restecg", "thalach", "exang", "oldpeak", "slope",
                 "ca", "thal", "num"]
 # use fullpath for url
-url = 'C:/Users/ADAWAS/Desktop/repos/R_CEB/PyModelDeployment/data/processed.cleveland.data'
+url = 'C:/Users/P/Desktop/repos/CEB_PyDeployModel/PyModelDeployment/data/processed.cleveland.data'
+# url = 'C:/Users/ADAWAS/Desktop/repos/R_CEB/PyModelDeployment/data/processed.cleveland.data'
+
 df = pd.read_csv(url, header=None, names=column_names)
 
 df = df[(df['thal'] != '?') & (df['ca'] != '?')].reset_index(drop=True)
