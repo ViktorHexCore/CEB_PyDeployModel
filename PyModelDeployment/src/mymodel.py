@@ -45,7 +45,8 @@ data = df.loc[:, select_features]
 features = data.columns.tolist()
 features.remove('Labels')
 
-# print(df)
+print(df)
+print(data)
 
 heart = ml.ai(data=df, features=features, target='Labels', test_size=0.2)
 

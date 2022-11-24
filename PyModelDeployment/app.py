@@ -102,6 +102,7 @@ def result():
 
     X_new = np.array(fmap[thal] + fmap[cp] + fmap[slope] +
                      [int(exang)] + [int(ca)]).reshape(1, -1)
+    print(X_new)
     yhat = heart.predict(X_new)
     if yhat[0] == 1:
         outcome = "heart disease"
@@ -148,15 +149,6 @@ def result():
               </table>
               <p> This patient is diagnose as """ + outcome + """ with probability """ + str(round(prob[0][1], 2)) + """.
               </body>"""
-    # <h3> Heart Disease Diagnosis <h3>
-    # <p> Patient profile </p>
-    #     <h5> Thalassemia: """ + thal + """</h5>
-    #     <h5> Chest Pain: """ + cp + """</h5>
-    #     <h5> Slope: """ + slope + """</h5>
-    #     <h5> Exercise induced angina: """ + exang + """</h5>
-    #     <h5> Number of major vessels (0-3) colored by flourosopy: """ + ca + """</h5>
-    # <p> This patient is diagnose as """ + outcome + """ with probability """ + str(round(prob[0][1], 2)) + """.
-    # </body>
 
     return results
 
